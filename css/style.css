@@ -1,0 +1,435 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* Aquí empieza el proyecto */
+:root {
+  --black: #313131;
+  --brown: #9B9A78;
+  --gray: #909090;
+  --primary-font: "Poppins", serif;
+  --secondary_font: "Playfair Display", serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+header>a img {
+  width: 141px;
+}
+
+header nav.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav.menu ul li a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+header nav.menu ul li a.active {
+  color: var(--brown);
+}
+
+header nav.menu ul li a:hover {
+  color: var(--brown);
+}
+
+aside ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+aside ul li a {
+  color: var(--brown);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+aside ul li a:hover {
+  color: var(--black);
+}
+
+aside ul li a img {
+  width: 20px;
+}
+
+aside ul li a.button {
+  display: inline-block;
+  color: white;
+  background-color: var(--brown);
+  padding: 8px 18px;
+}
+
+aside ul li a.button:hover {
+  background-color: var(--black);
+}
+
+section.hero {
+  display: flex;
+  justify-content: flex-end;
+  background-image: url("../img/placeholder.jpg");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  padding: 45px 0;
+}
+
+.hero_content {
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.hero_header {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(8px);
+  padding: 35px 5px 35px 35px;
+}
+
+.hero_header h1 {
+  font-family: var(--secondary_font);
+  font-size: 35px;
+  line-height: 45px;
+  max-width: 70%;
+  margin: 0;
+  position: relative;
+}
+
+.hero_header h1::before {
+  content: '';
+  height: 5px;
+  width: 45px;
+  background-color: var(--brown);
+  position: absolute;
+  right: -32px;
+  top: 24px;
+}
+
+.hero_header p {
+  font-size: 15px;
+  color: var(--brown);
+  font-weight: 300;
+}
+
+.hero_list {
+  min-height: 50px;
+  overflow: visible;
+}
+
+.hero_list ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(23px, 1fr));
+  align-items: center;
+  list-style: none;
+  font-size: 12px;
+  color: var(--black);
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  margin-left: auto;
+  gap: 7px;
+}
+
+.hero_list ul li {
+  background-image: url("../img/icon-check.svg");
+  background-repeat: no-repeat;
+  background-size: 17px;
+  background-position: left center;
+  padding-left: 25px;
+  font-weight: 300;
+}
+
+.coworking-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 140px;
+  padding: 0 60px;
+}
+
+.coworking-info article img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.coworking-info article h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.coworking-info article p {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 400;
+}
